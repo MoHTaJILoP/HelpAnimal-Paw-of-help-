@@ -1,14 +1,18 @@
 
+/* =================================
+   ЛАПА ПОМОЩИ — ОБЩИЕ НАСТРОЙКИ
+================================= */
+
 :root {
-    --green: #426b50;
-    --green-dark: #294b37;
-    --green-light: #e7efe5;
-    --cream: #fbf8f1;
-    --orange: #e9a15b;
-    --text: #303b33;
-    --muted: #778078;
-    --white: #ffffff;
-    --shadow: 0 8px 28px rgba(41, 75, 55, 0.09);
+    --green: #426B8A;
+    --green-dark: #29465C;
+    --green-light: #E8F0F6;
+    --cream: #FBF8F1;
+    --orange: #E9A15B;
+    --text: #303943;
+    --muted: #777F87;
+    --white: #FFFFFF;
+    --shadow: 0 8px 25px rgba(41, 70, 92, 0.10);
 }
 
 * {
@@ -21,217 +25,279 @@ html {
 
 body {
     margin: 0;
-    color: var(--text);
     background: var(--cream);
+    color: var(--text);
     font-family: Arial, sans-serif;
     line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
 }
 
 a {
     text-decoration: none;
 }
 
-/* Навигация */
+/* =================================
+   НАВИГАЦИЯ
+================================= */
 
-.site-nav {
-    background: var(--green-dark);
-    padding: 14px 0;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+.navbar {
+    background: var(--white) !important;
+    padding: 15px 0;
+    box-shadow: 0 3px 18px rgba(41, 75, 55, .08) !important;
 }
 
-.site-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
+.navbar-brand {
+    color: var(--green-dark) !important;
+    font-size: 1.45rem;
+    font-weight: 800 !important;
 }
 
-.brand-icon {
-    display: grid;
-    place-items: center;
-    width: 43px;
-    height: 43px;
-    background: white;
-    border-radius: 14px;
-    font-size: 25px;
-}
-
-.site-nav .nav-link {
-    color: rgba(255,255,255,.88);
+.navbar .nav-link {
+    color: var(--text);
     font-weight: 600;
-    padding: 10px 13px !important;
+    padding: 10px 14px !important;
     transition: .2s;
 }
 
-.site-nav .nav-link:hover,
-.site-nav .nav-link.active {
-    color: var(--orange);
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--green) !important;
 }
 
-/* Кнопки */
+/* =================================
+   КНОПКИ
+================================= */
 
-.btn-paw {
-    display: inline-block;
-    background: var(--orange);
-    color: #30271e;
-    border: 2px solid var(--orange);
-    border-radius: 30px;
-    padding: 12px 25px;
+.btn-primary {
+    color: white !important;
+    background: var(--green) !important;
+    border: 2px solid var(--green) !important;
+    border-radius: 30px !important;
+    padding: 11px 23px;
     font-weight: 700;
     transition: .25s;
 }
 
-.btn-paw:hover {
-    background: #f5b878;
-    border-color: #f5b878;
-    color: #30271e;
-    transform: translateY(-3px);
+.btn-primary:hover {
+    background: var(--green-dark) !important;
+    border-color: var(--green-dark) !important;
+    transform: translateY(-2px);
 }
 
-.btn-outline-paw {
-    display: inline-block;
-    color: var(--green);
-    border: 2px solid var(--green);
-    border-radius: 30px;
-    padding: 11px 24px;
+.btn-outline-primary {
+    color: var(--green) !important;
+    background: transparent !important;
+    border: 2px solid var(--green) !important;
+    border-radius: 30px !important;
+    padding: 10px 22px;
     font-weight: 700;
     transition: .25s;
 }
 
-.btn-outline-paw:hover {
-    background: var(--green);
-    color: white;
+.btn-outline-primary:hover {
+    color: white !important;
+    background: var(--green) !important;
 }
 
-/* Главный экран */
+.btn-outline-secondary {
+    border-radius: 25px;
+}
 
-.hero {
-    padding: 70px 0;
-    background: linear-gradient(120deg, #e7efe5, #fbf8f1);
+/* =================================
+   ГЛАВНЫЙ ЭКРАН
+================================= */
+
+.hero-section {
+    position: relative;
+    padding: 75px 0;
+    background: linear-gradient(120deg, #e8f0e6, #fbf8f1);
     overflow: hidden;
 }
 
-.hero .row {
+.hero-section .container {
+    position: relative;
+}
+
+.hero-section .row {
     align-items: center;
 }
 
-.hero h1 {
-    color: var(--green-dark);
-    font-size: clamp(2.3rem, 4.5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 24px;
+.hero-section .col-lg-6 {
+    min-width: 0;
 }
 
-.hero p {
+.hero-section h1 {
+    color: var(--green-dark);
+    font-size: clamp(2.3rem, 4vw, 3.7rem);
+    font-weight: 800;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+.hero-section p {
+    max-width: 560px;
     color: var(--muted);
     font-size: 1.12rem;
     line-height: 1.8;
-    margin-bottom: 28px;
 }
 
-.hero-image {
+.hero-section .hero-image {
     display: block;
     width: 100%;
-    height: 420px;
+    height: 430px;
     object-fit: cover;
     object-position: center;
     border-radius: 28px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 15px 40px rgba(41, 75, 55, .16);
 }
 
-.eyebrow {
+.text-accent {
+    color: var(--green) !important;
+}
+
+/* Статистика */
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-stats > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    color: var(--green);
+    font-size: 1.8rem;
+    line-height: 1.3;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+/* =================================
+   ОБЩИЕ СЕКЦИИ
+================================= */
+
+.section-padding {
+    padding: 75px 0;
+}
+
+.bg-soft {
+    background: var(--green-light);
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 10px;
     color: #b87535;
-    text-transform: uppercase;
-    font-weight: 800;
     font-size: .78rem;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
 }
-
-/* Заголовки и секции */
 
 .section-title {
     color: var(--green-dark);
     font-weight: 800;
-    margin-bottom: 15px;
+    line-height: 1.2;
+    margin-bottom: 18px;
 }
 
-.section-text {
+.section-subtitle {
+    max-width: 650px;
+    margin: 0 auto;
     color: var(--muted);
     line-height: 1.8;
 }
 
-.page-header {
-    padding: 60px 0 40px;
-    background: var(--green-light);
-}
+/* =================================
+   ИСТОРИИ ЖИВОТНЫХ
+================================= */
 
-.page-header h1 {
-    color: var(--green-dark);
-    font-weight: 800;
-}
-
-/* Карточки */
-
-.info-card,
-.animal-card,
-.contact-card,
-.help-card {
+.story-card {
     height: 100%;
     background: white;
-    border: 0;
     border-radius: 22px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform .25s, box-shadow .25s;
 }
 
-.info-card:hover,
-.animal-card:hover {
+.story-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(41, 75, 55, .15);
 }
 
-.info-icon {
-    display: grid;
-    place-items: center;
-    width: 62px;
-    height: 62px;
-    background: var(--green-light);
-    border-radius: 20px;
-    font-size: 29px;
-}
-
-.animal-image {
+.story-card img {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 235px;
     object-fit: cover;
-    background: var(--green-light);
 }
 
-.animal-card .card-body {
-    padding: 23px;
+.story-card h3 {
+    color: var(--green-dark);
 }
 
-.animal-card h3 {
+.story-card p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+/* =================================
+   КАРТОЧКИ ПИТОМЦЕВ
+================================= */
+
+.pet-card {
+    height: 100%;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.pet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(41, 75, 55, .15);
+}
+
+.pet-card > img {
+    display: block;
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+}
+
+.pet-card h3 {
     color: var(--green-dark);
     font-weight: 800;
 }
 
-.animal-meta {
+.pet-card p {
     color: var(--muted);
-    font-size: .9rem;
 }
 
-/* Статусы животных */
+.pet-card .pet-description {
+    color: var(--green);
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+/* Статусы */
 
 .status {
     display: inline-block;
-    border-radius: 30px;
     padding: 6px 13px;
+    border-radius: 30px;
     font-size: .78rem;
     font-weight: 700;
 }
@@ -241,78 +307,92 @@ a {
     background: #dff2e3;
 }
 
-.status-temporary {
+.status-foster {
     color: #885b1b;
     background: #fff0d2;
 }
 
-.status-found {
+.status-adopted {
     color: #52616b;
     background: #e8edf0;
 }
 
-/* Фильтры */
+/* =================================
+   ЗАГОЛОВОК СТРАНИЦЫ
+================================= */
 
-.filter-button {
-    border: 1px solid #cad8cb;
+.page-header {
+    padding: 65px 0 50px;
+    background: var(--green-light);
+}
+
+.page-header h1 {
+    margin-top: 10px;
+}
+
+.page-header .section-subtitle {
+    margin-top: 12px;
+}
+
+/* =================================
+   ФИЛЬТРЫ КАТАЛОГА
+================================= */
+
+.filter-panel {
+    padding: 25px;
     background: white;
-    color: var(--green);
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-weight: 600;
-    transition: .2s;
-}
-
-.filter-button.active,
-.filter-button:hover {
-    color: white;
-    background: var(--green);
-    border-color: var(--green);
-}
-
-/* Страница животного */
-
-.animal-detail-image {
-    display: block;
-    width: 100%;
-    max-height: 480px;
-    object-fit: cover;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: var(--shadow);
 }
 
-.animal-data {
+.filter-panel h2 {
+    color: var(--green-dark);
+}
+
+/* =================================
+   СТРАНИЦА ЖИВОТНОГО
+================================= */
+
+#animal-photo {
+    display: block;
     width: 100%;
-    background: white;
-    border-radius: 16px;
+    min-height: 300px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+#animal-name {
+    color: var(--green-dark);
+}
+
+main.container {
+    min-height: 60vh;
+}
+
+.table {
     overflow: hidden;
+    border-radius: 12px;
+    background: white;
 }
 
-.animal-data th,
-.animal-data td {
-    padding: 14px 16px;
-    border-bottom: 1px solid #edf0eb;
+.table th {
+    color: var(--green-dark);
 }
-
-.animal-data th {
-    color: var(--green);
-    width: 45%;
-}
-
-/* Аккордеон */
 
 .accordion-item {
-    border: 0;
     margin-bottom: 12px;
+    border: 0;
     border-radius: 14px !important;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(41, 75, 55, .05);
+    box-shadow: 0 3px 12px rgba(41, 75, 55, .06);
 }
 
 .accordion-button {
     color: var(--green-dark);
-    font-weight: 700;
     background: white;
+    font-weight: 700;
 }
 
 .accordion-button:not(.collapsed) {
@@ -321,57 +401,42 @@ a {
     box-shadow: none;
 }
 
-/* Формы */
+/* =================================
+   БЛОК ПОМОЩИ
+================================= */
 
-.form-section {
-    background: white;
-    padding: 35px;
-    border-radius: 24px;
-    box-shadow: var(--shadow);
+.help-section {
+    background: var(--green-light);
+    text-align: center;
 }
 
-.form-label {
+.help-section .section-title {
     color: var(--green-dark);
-    font-weight: 700;
 }
 
-.form-control,
-.form-select {
-    padding: 13px 15px;
-    border: 1px solid #d6dfd6;
-    border-radius: 12px;
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: #6b9b76;
-    box-shadow: 0 0 0 .2rem rgba(49,91,69,.15);
-}
-
-.form-control.is-invalid,
-.form-select.is-invalid {
-    border-color: #dc3545;
-}
-
-/* Карта */
-
-.map-frame {
-    width: 100%;
-    height: 390px;
-    border: 0;
-    border-radius: 20px;
-}
-
-/* Подвал */
+/* =================================
+   ПОДВАЛ
+================================= */
 
 .site-footer {
-    margin-top: 65px;
-    padding: 50px 0 22px;
+    padding: 45px 0 20px;
     color: white;
     background: var(--green-dark);
 }
 
+.site-footer h3 {
+    color: white;
+    font-weight: 800;
+}
+
+.site-footer p {
+    color: #dce9dc;
+}
+
 .site-footer a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 8px;
     color: #dce9dc;
 }
 
@@ -379,54 +444,40 @@ a {
     color: var(--orange);
 }
 
-.footer-muted {
-    color: #c3d1c5;
-    line-height: 1.8;
+.site-footer hr {
+    border-color: rgba(255,255,255,.25);
 }
 
-.footer-line {
-    border-color: rgba(255,255,255,.2);
+/* =================================
+   ФОРМЫ И МОДАЛЬНЫЕ ОКНА
+================================= */
+
+.form-control,
+.form-select {
+    padding: 12px 14px;
+    border: 1px solid #d6dfd6;
+    border-radius: 11px;
 }
 
-/* Дополнительные блоки */
-
-.hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin-top: 35px;
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 .2rem rgba(66, 107, 80, .15);
 }
 
-.hero-stats strong {
-    display: block;
-    color: var(--green);
-    font-size: 1.8rem;
-}
-
-.hero-stats span {
-    color: var(--muted);
-    font-size: .85rem;
-}
-
-.cta-section {
-    padding: 60px 0;
-    color: white;
-    background: var(--green);
-    border-radius: 25px;
-}
-
-.cta-section h2 {
-    font-weight: 800;
+.form-label {
+    color: var(--green-dark);
+    font-weight: 700;
 }
 
 .modal-content {
     border: 0;
-    border-radius: 22px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .modal-header {
     background: var(--green-light);
-    border-radius: 22px 22px 0 0;
 }
 
 .alert-demo {
@@ -442,52 +493,60 @@ a {
     display: block;
 }
 
-.empty-message {
-    display: none;
-    text-align: center;
-    padding: 35px;
-    color: var(--muted);
-}
-
-/* Адаптация под планшеты и телефоны */
+/* =================================
+   АДАПТАЦИЯ
+================================= */
 
 @media (max-width: 991px) {
-    .hero {
-        padding: 45px 0;
+    .hero-section {
+        padding: 50px 0;
     }
 
-    .hero-image {
-        height: 340px;
+    .hero-section .hero-image {
+        height: 350px;
     }
 
-    .site-nav .navbar-collapse {
+    .section-padding {
+        padding: 55px 0;
+    }
+
+    .navbar-collapse {
         padding-top: 15px;
     }
 }
 
 @media (max-width: 575px) {
-    .hero-image {
-        height: 250px;
+    .hero-section {
+        padding: 40px 0;
     }
 
-    .animal-image {
-        height: 220px;
+    .hero-section h1 {
+        font-size: 2.25rem;
     }
 
-    .form-section {
-        padding: 20px;
+    .hero-section .hero-image {
+        height: 260px;
     }
 
     .hero-stats {
-        gap: 20px;
+        gap: 18px;
     }
 
-    .map-frame {
-        height: 300px;
+    .hero-stats strong {
+        font-size: 1.5rem;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .story-card img,
+    .pet-card > img {
+        height: 220px;
     }
 
     .page-header {
-        padding: 40px 0 25px;
+        padding: 45px 0 35px;
     }
 }
 

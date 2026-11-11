@@ -1,61 +1,107 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты приюта для животных «Лапа помощи».">
+    <title>Контакты — Лапа помощи</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">🐾 Лапа помощи</a>
+
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="catalog.html">Наши животные</a>
+            <a class="nav-link" href="order.html">Оставить заявку</a>
+            <a class="nav-link active" href="contacts.html">Контакты</a>
+        </div>
     </div>
-  </header>
+</nav>
 
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Контакты</span>
-    </nav>
+<section class="page-header text-center py-5">
+    <div class="container">
+        <span class="section-label">МЫ ВСЕГДА НА СВЯЗИ</span>
+        <h1 class="section-title mt-2">Наши контакты</h1>
+        <p class="section-subtitle">
+            Мы будем рады ответить на ваши вопросы и помочь животным вместе с вами
+        </p>
+    </div>
+</section>
 
-    <section class="section">
-      <h1>Контакты</h1>
-      <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
-      </p>
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-4">
 
-      <ul>
-        <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
-        <li>Адрес: г. Москва, учебный проект</li>
-      </ul>
-    </section>
+            <div class="col-md-6">
+                <div class="story-card p-4 h-100">
+                    <h3 class="mb-3">Как с нами связаться</h3>
 
-    <section class="section" id="feedback">
-      <h2>Обратная связь</h2>
-      <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
-      </p>
-      <a class="button" href="index.html#contacts">Перейти к форме</a>
-    </section>
-  </main>
+                    <p><strong>Телефон:</strong><br>
+                    +7 (900) 000-00-00</p>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+                    <p><strong>Электронная почта:</strong><br>
+                    info@lapapomoshi.ru</p>
+
+                    <p><strong>Адрес:</strong><br>
+                    г. Москва, адрес приюта уточняется</p>
+
+                    <p><strong>Режим работы:</strong><br>
+                    Ежедневно с 10:00 до 18:00</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="story-card p-4 h-100">
+                    <h3 class="mb-3">Чем вы можете помочь?</h3>
+
+                    <p>
+                        Даже небольшая помощь может изменить жизнь животного.
+                        Мы будем рады любой поддержке!
+                    </p>
+
+                    <ul>
+                        <li>Стать волонтёром;</li>
+                        <li>Помочь кормом и необходимыми вещами;</li>
+                        <li>Взять животное домой;</li>
+                        <li>Рассказать о нашем приюте другим людям.</li>
+                    </ul>
+
+                    <a href="order.html" class="btn btn-primary mt-2">
+                        Оставить заявку
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="story-card p-4 p-md-5 text-center mt-4">
+            <h2 class="section-title">Давайте делать добро вместе!</h2>
+            <p class="section-subtitle mx-auto">
+                У каждого животного должен быть шанс найти любящую семью.
+                Спасибо, что не остаётесь равнодушными.
+            </p>
+            <a href="catalog.html" class="btn btn-primary mt-3">
+                Посмотреть животных
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="site-footer text-center py-4">
+    <div class="container">
+        <p class="mb-0">
+            © 2026 Приют «Лапа помощи». Все права защищены.
+        </p>
+    </div>
+</footer>
+
 </body>
 </html>
