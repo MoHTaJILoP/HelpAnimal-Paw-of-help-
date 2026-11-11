@@ -39,6 +39,9 @@ HelpAnimal/
 │
 └── images/
     ├── соб
+
+## Сайт проекта
+https://mohtajilop.github.io/HelpAnimal-Paw-of-help-/
 ## Автор
 
 ФИО: Кравченков Станислав Дмитриевич  
