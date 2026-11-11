@@ -1,0 +1,501 @@
+
+:root {
+    --green: #426b50;
+    --green-dark: #294b37;
+    --green-light: #e7efe5;
+    --cream: #fbf8f1;
+    --orange: #e9a15b;
+    --text: #303b33;
+    --muted: #778078;
+    --white: #ffffff;
+    --shadow: 0 8px 28px rgba(41, 75, 55, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background: var(--cream);
+    font-family: Arial, sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Навигация */
+
+.site-nav {
+    background: var(--green-dark);
+    padding: 14px 0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    background: white;
+    border-radius: 14px;
+    font-size: 25px;
+}
+
+.site-nav .nav-link {
+    color: rgba(255,255,255,.88);
+    font-weight: 600;
+    padding: 10px 13px !important;
+    transition: .2s;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+    color: var(--orange);
+}
+
+/* Кнопки */
+
+.btn-paw {
+    display: inline-block;
+    background: var(--orange);
+    color: #30271e;
+    border: 2px solid var(--orange);
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn-paw:hover {
+    background: #f5b878;
+    border-color: #f5b878;
+    color: #30271e;
+    transform: translateY(-3px);
+}
+
+.btn-outline-paw {
+    display: inline-block;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 30px;
+    padding: 11px 24px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn-outline-paw:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* Главный экран */
+
+.hero {
+    padding: 70px 0;
+    background: linear-gradient(120deg, #e7efe5, #fbf8f1);
+    overflow: hidden;
+}
+
+.hero .row {
+    align-items: center;
+}
+
+.hero h1 {
+    color: var(--green-dark);
+    font-size: clamp(2.3rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+.eyebrow {
+    color: #b87535;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .78rem;
+    letter-spacing: 2px;
+}
+
+/* Заголовки и секции */
+
+.section-title {
+    color: var(--green-dark);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.page-header {
+    padding: 60px 0 40px;
+    background: var(--green-light);
+}
+
+.page-header h1 {
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+/* Карточки */
+
+.info-card,
+.animal-card,
+.contact-card,
+.help-card {
+    height: 100%;
+    background: white;
+    border: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.info-card:hover,
+.animal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(41, 75, 55, .15);
+}
+
+.info-icon {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    background: var(--green-light);
+    border-radius: 20px;
+    font-size: 29px;
+}
+
+.animal-image {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: var(--green-light);
+}
+
+.animal-card .card-body {
+    padding: 23px;
+}
+
+.animal-card h3 {
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+.animal-meta {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+/* Статусы животных */
+
+.status {
+    display: inline-block;
+    border-radius: 30px;
+    padding: 6px 13px;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.status-home {
+    color: #27623d;
+    background: #dff2e3;
+}
+
+.status-temporary {
+    color: #885b1b;
+    background: #fff0d2;
+}
+
+.status-found {
+    color: #52616b;
+    background: #e8edf0;
+}
+
+/* Фильтры */
+
+.filter-button {
+    border: 1px solid #cad8cb;
+    background: white;
+    color: var(--green);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    color: white;
+    background: var(--green);
+    border-color: var(--green);
+}
+
+/* Страница животного */
+
+.animal-detail-image {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.animal-data {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.animal-data th,
+.animal-data td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf0eb;
+}
+
+.animal-data th {
+    color: var(--green);
+    width: 45%;
+}
+
+/* Аккордеон */
+
+.accordion-item {
+    border: 0;
+    margin-bottom: 12px;
+    border-radius: 14px !important;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(41, 75, 55, .05);
+}
+
+.accordion-button {
+    color: var(--green-dark);
+    font-weight: 700;
+    background: white;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--green-dark);
+    background: var(--green-light);
+    box-shadow: none;
+}
+
+/* Формы */
+
+.form-section {
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.form-label {
+    color: var(--green-dark);
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    padding: 13px 15px;
+    border: 1px solid #d6dfd6;
+    border-radius: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6b9b76;
+    box-shadow: 0 0 0 .2rem rgba(49,91,69,.15);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Карта */
+
+.map-frame {
+    width: 100%;
+    height: 390px;
+    border: 0;
+    border-radius: 20px;
+}
+
+/* Подвал */
+
+.site-footer {
+    margin-top: 65px;
+    padding: 50px 0 22px;
+    color: white;
+    background: var(--green-dark);
+}
+
+.site-footer a {
+    color: #dce9dc;
+}
+
+.site-footer a:hover {
+    color: var(--orange);
+}
+
+.footer-muted {
+    color: #c3d1c5;
+    line-height: 1.8;
+}
+
+.footer-line {
+    border-color: rgba(255,255,255,.2);
+}
+
+/* Дополнительные блоки */
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.hero-stats strong {
+    display: block;
+    color: var(--green);
+    font-size: 1.8rem;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.cta-section {
+    padding: 60px 0;
+    color: white;
+    background: var(--green);
+    border-radius: 25px;
+}
+
+.cta-section h2 {
+    font-weight: 800;
+}
+
+.modal-content {
+    border: 0;
+    border-radius: 22px;
+}
+
+.modal-header {
+    background: var(--green-light);
+    border-radius: 22px 22px 0 0;
+}
+
+.alert-demo {
+    display: none;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: #245c35;
+    background: #e0f2e4;
+}
+
+.alert-demo.show {
+    display: block;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    padding: 35px;
+    color: var(--muted);
+}
+
+/* Адаптация под планшеты и телефоны */
+
+@media (max-width: 991px) {
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero-image {
+        height: 340px;
+    }
+
+    .site-nav .navbar-collapse {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-image {
+        height: 250px;
+    }
+
+    .animal-image {
+        height: 220px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .map-frame {
+        height: 300px;
+    }
+
+    .page-header {
+        padding: 40px 0 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

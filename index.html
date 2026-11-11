@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лапа помощи — приют для животных</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Навигация -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            🐾 Лапа помощи
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Наши животные</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-primary" href="order.html">Помочь приюту</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Главный экран -->
+<header class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="section-label">Приют для бездомных животных</span>
+
+                <h1 class="display-4 fw-bold mt-3">
+                    Каждому питомцу нужен <span class="text-accent">свой дом</span>
+                </h1>
+
+                <p class="lead mt-4">
+                    Мы спасаем животных, заботимся о них и помогаем найти
+                    любящую семью. Возможно, именно здесь вас ждёт
+                    ваш будущий лучший друг.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="catalog.html" class="btn btn-primary btn-lg">
+                        Найти питомца
+                    </a>
+
+                    <button class="btn btn-outline-primary btn-lg"
+                            data-bs-toggle="modal"
+                            data-bs-target="#quickHelpModal">
+                        Стать волонтёром
+                    </button>
+                </div>
+
+                <div class="hero-stats mt-5">
+                    <div>
+                        <strong>120+</strong>
+                        <span>спасённых животных</span>
+                    </div>
+                    <div>
+                        <strong>85+</strong>
+                        <span>нашли свой дом</span>
+                    </div>
+                    <div>
+                        <strong>30+</strong>
+                        <span>волонтёров</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Счастливая собака"
+                    class="img-fluid hero-image">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- О приюте -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <img
+                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=85"
+                    alt="Собаки в приюте"
+                    class="img-fluid rounded-4 shadow">
+            </div>
+
+            <div class="col-lg-7">
+                <span class="section-label">О нас</span>
+                <h2 class="section-title">Наша миссия — дарить заботу</h2>
+
+                <p>
+                    «Лапа помощи» — это приют, который помогает бездомным
+                    животным получить медицинскую помощь, питание и временное
+                    убежище.
+                </p>
+
+                <p>
+                    Наша главная цель — найти каждому питомцу ответственную
+                    и любящую семью. Мы верим, что даже небольшая помощь
+                    может изменить чью-то жизнь.
+                </p>
+
+                <a href="contacts.html" class="btn btn-outline-primary mt-2">
+                    Узнать о приюте
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Истории животных -->
+<section class="section-padding bg-soft">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Истории спасения</span>
+            <h2 class="section-title">У каждого есть своя история</h2>
+            <p class="section-subtitle">
+                Несколько историй животных, которым мы смогли помочь.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="story-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=700&q=85"
+                        alt="Собака Рекс">
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold">Рекс — новый шанс</h3>
+                        <p>
+                            Рекс попал к нам напуганным и одиноким.
+                            После лечения и заботы он стал дружелюбным
+                            и активным псом.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="story-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=85"
+                        alt="Кошка Муся">
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold">Муся — домашний уют</h3>
+                        <p>
+                            Маленькая Муся долго ждала внимания.
+                            Теперь она доверяет людям и мечтает
+                            о спокойном доме.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="story-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=700&q=85"
+                        alt="Щенок">
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold">Бим — верный друг</h3>
+                        <p>
+                            Бим оказался на улице совсем маленьким.
+                            Благодаря волонтёрам он окреп и готов
+                            познакомиться с будущими хозяевами.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Питомцы -->
+<section class="section-padding">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3">
+            <div>
+                <span class="section-label">Наши подопечные</span>
+                <h2 class="section-title mb-0">Они ищут дом</h2>
+            </div>
+
+            <a href="catalog.html" class="btn btn-outline-primary">
+                Все животные →
+            </a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="pet-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=85"
+                        alt="Собака Бублик">
+                    <div class="p-4">
+                        <span class="status status-home">Ищет дом</span>
+                        <h3 class="h4 mt-3">Бублик</h3>
+                        <p class="pet-description">Собака · 2 года · Мальчик</p>
+                        <p>Добрый и активный пёс, который любит прогулки.</p>
+                        <a href="product.html?animal=bublik"
+                           class="btn btn-primary w-100">
+                            Подробнее
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="pet-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=85"
+                        alt="Кошка Луна">
+                    <div class="p-4">
+                        <span class="status status-home">Ищет дом</span>
+                        <h3 class="h4 mt-3">Луна</h3>
+                        <p class="pet-description">Кошка · 1 год · Девочка</p>
+                        <p>Ласковая и спокойная кошка, любит внимание.</p>
+                        <a href="product.html?animal=luna"
+                           class="btn btn-primary w-100">
+                            Подробнее
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="pet-card h-100">
+                    <img
+                        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=85"
+                        alt="Собака Тайсон">
+                    <div class="p-4">
+                        <span class="status status-foster">На передержке</span>
+                        <h3 class="h4 mt-3">Тайсон</h3>
+                        <p class="pet-description">Собака · 4 года · Мальчик</p>
+                        <p>Уравновешенный и дружелюбный компаньон.</p>
+                        <a href="product.html?animal=tyson"
+                           class="btn btn-primary w-100">
+                            Подробнее
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Призыв помочь -->
+<section class="help-section section-padding">
+    <div class="container text-center">
+        <h2 class="section-title">Вы можете изменить чью-то жизнь</h2>
+        <p class="section-subtitle">
+            Станьте волонтёром, помогите с передержкой или поддержите приют.
+            Любая помощь важна!
+        </p>
+
+        <button class="btn btn-primary btn-lg mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#quickHelpModal">
+            Хочу помочь
+        </button>
+    </div>
+</section>
+
+<!-- Контакты внизу -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h3 class="h5">🐾 Лапа помощи</h3>
+                <p>Приют для животных. Помогаем найти дом и заботу.</p>
+            </div>
+
+            <div class="col-md-3">
+                <h3 class="h6">Навигация</h3>
+                <a href="catalog.html">Наши животные</a>
+                <a href="order.html">Помочь приюту</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+
+            <div class="col-md-3">
+                <h3 class="h6">Связаться</h3>
+                <p>+7 (900) 123-45-67</p>
+                <p>info@lapa-help.ru</p>
+            </div>
+        </div>
+
+        <hr>
+        <p class="text-center mb-0">
+            © 2026 Лапа помощи. Все права защищены.
+        </p>
+    </div>
+</footer>
+
+<!-- Модальное окно быстрой заявки -->
+<div class="modal fade" id="quickHelpModal" tabindex="-1"
+     aria-labelledby="quickHelpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="quickHelpModalLabel">
+                    Заявка на помощь приюту
+                </h2>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+
+            <div class="modal-body">
+                <form class="js-demo-form">
+                    <div class="mb-3">
+                        <label for="quick-name" class="form-label">Ваше имя</label>
+                        <input type="text" class="form-control" id="quick-name"
+                               name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quick-phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="quick-phone"
+                               name="phone" placeholder="+7..." required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="help-type" class="form-label">Как хотите помочь?</label>
+                        <select class="form-select" id="help-type"
+                                name="help_type" required>
+                            <option value="">Выберите вариант</option>
+                            <option value="volunteer">Волонтёрство</option>
+                            <option value="visit">Посещение приюта</option>
+                            <option value="financial">Финансовая помощь</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Отправить заявку
+                    </button>
+
+                    <div class="form-status mt-3" data-form-status
+                         role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

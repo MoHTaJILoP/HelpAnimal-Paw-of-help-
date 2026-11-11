@@ -1,0 +1,19 @@
+
+# Системные файлы Windows
+Thumbs.db
+desktop.ini
+
+# Системные файлы macOS
+.DS_Store
+
+# Временные файлы редакторов
+*.swp
+*.tmp
+*.log
+
+# Настройки редакторов
+.vscode/
+.idea/
+
+# Зависимости Node.js, если появятся
+node_modules/
