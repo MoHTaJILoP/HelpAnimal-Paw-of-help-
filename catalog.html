@@ -33,7 +33,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="favorites.html">
-                    ♥ Избранное (<span data-favorites-count>0</span>)
+                        ♥ Избранное (<span data-favorites-count>0</span>)
                     </a>
                 </li>
                 <li class="nav-item ms-lg-3">
@@ -59,9 +59,33 @@
 <section class="section-padding">
     <div class="container">
 
-        <!-- Фильтры -->
+        <!-- Поиск и фильтры -->
         <div class="filter-panel mb-5">
-            <h2 class="h5 fw-bold mb-3">Выберите животное</h2>
+            <h2 class="h5 fw-bold mb-3">Найдите своего питомца</h2>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="petSearch"
+                        placeholder="Поиск по имени..."
+                    >
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-select" id="ageFilter">
+                        <option value="all">Любой возраст</option>
+                        <option value="1">1 год</option>
+                        <option value="2">2 года</option>
+                        <option value="3">3 года</option>
+                        <option value="4">4 года</option>
+                        <option value="5">5 лет</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3 class="h6 fw-bold mb-3">Категория животного</h3>
 
             <div class="d-flex flex-wrap gap-2">
                 <button class="btn btn-primary" data-filter="all">
@@ -76,24 +100,23 @@
                     Кошки
                 </button>
             </div>
+
+            <p class="text-muted mt-3 mb-0" id="searchResults"></p>
         </div>
 
         <!-- Карточки -->
         <div class="row g-4" id="petsCatalog">
 
             <!-- Бублик -->
-            <div class="col-md-6 col-lg-4" data-category="dog">
+            <div class="col-md-6 col-lg-4" data-category="dog" data-age="2">
                 <article class="pet-card h-100">
                     <img src="images/соб1.jpg" alt="Собака Бублик">
-
                     <div class="p-4">
                         <span class="status status-home">Ищет дом</span>
                         <h3 class="h4 mt-3">Бублик</h3>
                         <p class="pet-description">Собака · 2 года · Мальчик</p>
                         <p>Добрый, активный и дружелюбный пёс. Любит прогулки и игры.</p>
-
-                        <a href="product.html?animal=bublik"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=bublik" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
@@ -101,18 +124,15 @@
             </div>
 
             <!-- Луна -->
-            <div class="col-md-6 col-lg-4" data-category="cat">
+            <div class="col-md-6 col-lg-4" data-category="cat" data-age="1">
                 <article class="pet-card h-100">
                     <img src="images/кош1.jpg" alt="Кошка Луна">
-
                     <div class="p-4">
                         <span class="status status-home">Ищет дом</span>
                         <h3 class="h4 mt-3">Луна</h3>
                         <p class="pet-description">Кошка · 1 год · Девочка</p>
                         <p>Ласковая и спокойная кошка. Любит уют и внимание.</p>
-
-                        <a href="product.html?animal=luna"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=luna" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
@@ -120,18 +140,15 @@
             </div>
 
             <!-- Тайсон -->
-            <div class="col-md-6 col-lg-4" data-category="dog">
+            <div class="col-md-6 col-lg-4" data-category="dog" data-age="4">
                 <article class="pet-card h-100">
                     <img src="images/соб2.jpg" alt="Собака Тайсон">
-
                     <div class="p-4">
                         <span class="status status-foster">На передержке</span>
                         <h3 class="h4 mt-3">Тайсон</h3>
                         <p class="pet-description">Собака · 4 года · Мальчик</p>
                         <p>Спокойный и умный пёс, который хорошо ладит с людьми.</p>
-
-                        <a href="product.html?animal=tyson"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=tyson" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
@@ -139,18 +156,15 @@
             </div>
 
             <!-- Муся -->
-            <div class="col-md-6 col-lg-4" data-category="cat">
+            <div class="col-md-6 col-lg-4" data-category="cat" data-age="3">
                 <article class="pet-card h-100">
                     <img src="images/кош2.jpg" alt="Кошка Муся">
-
                     <div class="p-4">
                         <span class="status status-home">Ищет дом</span>
                         <h3 class="h4 mt-3">Муся</h3>
                         <p class="pet-description">Кошка · 3 года · Девочка</p>
                         <p>Нежная и общительная кошка, любит проводить время рядом с человеком.</p>
-
-                        <a href="product.html?animal=musya"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=musya" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
@@ -158,18 +172,15 @@
             </div>
 
             <!-- Рекс -->
-            <div class="col-md-6 col-lg-4" data-category="dog">
+            <div class="col-md-6 col-lg-4" data-category="dog" data-age="5">
                 <article class="pet-card h-100">
                     <img src="images/соб3.jpg" alt="Собака Рекс">
-
                     <div class="p-4">
                         <span class="status status-adopted">Нашёл дом</span>
                         <h3 class="h4 mt-3">Рекс</h3>
                         <p class="pet-description">Собака · 5 лет · Мальчик</p>
                         <p>Верный и преданный друг. Уже обрёл свою любящую семью.</p>
-
-                        <a href="product.html?animal=rex"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=rex" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
@@ -177,18 +188,15 @@
             </div>
 
             <!-- Барсик -->
-            <div class="col-md-6 col-lg-4" data-category="cat">
+            <div class="col-md-6 col-lg-4" data-category="cat" data-age="2">
                 <article class="pet-card h-100">
                     <img src="images/кош3.jpg" alt="Кот Барсик">
-
                     <div class="p-4">
                         <span class="status status-foster">На передержке</span>
                         <h3 class="h4 mt-3">Барсик</h3>
                         <p class="pet-description">Кот · 2 года · Мальчик</p>
                         <p>Любознательный и игривый кот. Любит исследовать новые места.</p>
-
-                        <a href="product.html?animal=barsik"
-                           class="btn btn-primary w-100">
+                        <a href="product.html?animal=barsik" class="btn btn-primary w-100">
                             Подробнее
                         </a>
                     </div>
