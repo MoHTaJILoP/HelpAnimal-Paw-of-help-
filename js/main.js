@@ -193,6 +193,34 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFavoritesPage();
     });
 
+    // Поделиться животным — копирование публичной ссылки
+    document.addEventListener('click', async (event) => {
+        const button = event.target.closest('[data-share-pet]');
+
+        if (!button) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const pet = pets.find((item) => item.id === button.dataset.sharePet);
+
+        if (!pet) return;
+
+        const shareUrl =
+            `https://mohtajilop.github.io/HelpAnimal-Paw-of-help-/product.html?animal=${encodeURIComponent(pet.id)}`;
+
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(shareUrl);
+                alert(`Ссылка на ${pet.name} скопирована!`);
+            } else {
+                window.prompt('Скопируйте ссылку на животное:', shareUrl);
+            }
+        } catch (error) {
+            window.prompt('Скопируйте ссылку на животное:', shareUrl);
+        }
+    });
+
     // Поиск и фильтрация животных
     const filterButtons = document.querySelectorAll('[data-filter]');
     const petCards = document.querySelectorAll('#petsCatalog [data-category]');
