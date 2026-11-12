@@ -353,3 +353,34 @@ document.addEventListener('DOMContentLoaded', () => {
     renderFavoritesPage();
 
 });
+
+
+// Кнопка возврата наверх
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.createElement('button');
+
+    button.className = 'back-to-top';
+    button.type = 'button';
+    button.textContent = '↑';
+    button.setAttribute('aria-label', 'Вернуться наверх');
+    button.title = 'Наверх';
+
+    document.body.appendChild(button);
+
+    // Показываем кнопку после прокрутки
+    window.addEventListener('scroll', () => {
+        button.classList.toggle('is-visible', window.scrollY > 300);
+    }, { passive: true });
+
+    // Возвращаемся к началу страницы
+    button.addEventListener('click', () => {
+        const reducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        window.scrollTo({
+            top: 0,
+            behavior: reducedMotion ? 'auto' : 'smooth'
+        });
+    });
+});
