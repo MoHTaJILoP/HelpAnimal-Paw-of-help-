@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Получение избранного из localStorage
     const getFavorites = () => {
         try {
-            return JSON.parse(localStorage.getItem('favoritePets')) || [];
+            const favorites = JSON.parse(localStorage.getItem('favoritePets'));
+            return Array.isArray(favorites) ? favorites : [];
         } catch {
             return [];
         }
@@ -118,26 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         button.dataset.favoriteToggle = pet.id;
 
         content.insertBefore(button, content.firstChild);
-    });
-
-    // Обработка нажатий на сердечки
-    document.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-favorite-toggle]');
-
-        if (!button) return;
-
-        const petId = button.dataset.favoriteToggle;
-        let favorites = getFavorites();
-
-        if (favorites.includes(petId)) {
-            favorites = favorites.filter((id) => id !== petId);
-        } else {
-            favorites.push(petId);
-        }
-
-        saveFavorites(favorites);
-        updateFavoritesDisplay();
-        renderFavoritesPage();
     });
 
     // Отображение страницы избранного
@@ -192,23 +173,71 @@ document.addEventListener('DOMContentLoaded', () => {
         updateFavoritesDisplay();
     };
 
-    // Фильтрация животных в каталоге
+    // Обработка нажатий на сердечки
+    document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-favorite-toggle]');
+
+        if (!button) return;
+
+        const petId = button.dataset.favoriteToggle;
+        let favorites = getFavorites();
+
+        if (favorites.includes(petId)) {
+            favorites = favorites.filter((id) => id !== petId);
+        } else {
+            favorites.push(petId);
+        }
+
+        saveFavorites(favorites);
+        updateFavoritesDisplay();
+        renderFavoritesPage();
+    });
+
+    // Поиск и фильтрация животных
     const filterButtons = document.querySelectorAll('[data-filter]');
     const petCards = document.querySelectorAll('#petsCatalog [data-category]');
+    const searchInput = document.getElementById('petSearch');
+    const ageFilter = document.getElementById('ageFilter');
+    const searchResults = document.getElementById('searchResults');
 
+    let selectedCategory = 'all';
+
+    const filterPets = () => {
+        const searchText = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const selectedAge = ageFilter ? ageFilter.value : 'all';
+
+        let visibleCount = 0;
+
+        petCards.forEach((card) => {
+            const name = card.querySelector('h3')?.textContent.toLowerCase() || '';
+            const category = card.dataset.category;
+            const age = card.dataset.age;
+
+            const matchesName = name.includes(searchText);
+            const matchesCategory =
+                selectedCategory === 'all' || category === selectedCategory;
+            const matchesAge =
+                selectedAge === 'all' || age === selectedAge;
+
+            const isVisible = matchesName && matchesCategory && matchesAge;
+
+            card.classList.toggle('d-none', !isVisible);
+
+            if (isVisible) {
+                visibleCount++;
+            }
+        });
+
+        if (searchResults) {
+            searchResults.textContent =
+                `Найдено животных: ${visibleCount}`;
+        }
+    };
+
+    // Переключение категорий
     filterButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            const selectedCategory = button.dataset.filter;
-
-            petCards.forEach((card) => {
-                const category = card.dataset.category;
-
-                if (selectedCategory === 'all' || category === selectedCategory) {
-                    card.classList.remove('d-none');
-                } else {
-                    card.classList.add('d-none');
-                }
-            });
+            selectedCategory = button.dataset.filter;
 
             filterButtons.forEach((item) => {
                 item.classList.remove('btn-primary');
@@ -217,8 +246,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             button.classList.remove('btn-outline-primary');
             button.classList.add('btn-primary');
+
+            filterPets();
         });
     });
+
+    // Поиск по имени
+    if (searchInput) {
+        searchInput.addEventListener('input', filterPets);
+    }
+
+    // Фильтр по возрасту
+    if (ageFilter) {
+        ageFilter.addEventListener('change', filterPets);
+    }
+
+    // Первоначальное отображение результатов
+    filterPets();
 
     // Быстрый выбор типа помощи
     document.querySelectorAll('[data-quick-help]').forEach((button) => {
